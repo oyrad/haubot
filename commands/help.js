@@ -15,6 +15,7 @@ module.exports = {
                 '```\n!flag {drzava} => pošaljem zastavu države```' +
                 '```\n!prognoza {grad} => trenutno stanje u gradu```' +
                 '```\n!trazi {pojam} => nalazim odabrani pojam```' +
+                '```\n!yt {pojam} => vraćam youtube link```' +
                 '\n**Player komande**' +
                 '```\n!sviraj {pjesma} => odsviram ti pjesmu```' +
                 '```\n!stani => mičem se```'

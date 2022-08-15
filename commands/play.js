@@ -3,8 +3,11 @@ const {
     joinVoiceChannel,
     createAudioPlayer,
     createAudioResource,
+    getNextResource,
 } = require('@discordjs/voice');
 const ytdl = require('ytdl-core');
+
+const queue = [];
 
 module.exports = {
     name: 'play',
@@ -37,11 +40,16 @@ module.exports = {
                 player.play(resource);
                 connection.subscribe(player);
 
-                player.on(AudioPlayerStatus.Idle, () => connection.destroy());
+                player.on(AudioPlayerStatus.Idle, () =>
+                    connection.disconnect()
+                );
 
                 message.channel.send('**Sviram**');
                 message.channel.send(url);
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                message.reply('nisam uspio');
+                console.log(err);
+            });
     },
 };

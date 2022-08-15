@@ -49,7 +49,7 @@ client.on('messageCreate', message => {
     else if (CMD_NAME === 'prdac')
         client.commands.get('fart').execute(message, args);
     else if (CMD_NAME === 'sex')
-        client.commands.get('sex').execute(message, args);
+        client.commands.get('try').execute(message, args);
     else if (CMD_NAME === 'tomo')
         message.channel.send({ files: ['./images/tomo.jpeg'] });
     //INTERACTIVE
@@ -59,11 +59,18 @@ client.on('messageCreate', message => {
         client.commands.get('search').execute(message, args);
     else if (CMD_NAME === 'prognoza')
         client.commands.get('weather').execute(message, args);
+    else if (CMD_NAME === 'yt')
+        client.commands.get('youtube').execute(message, args);
+    else if (CMD_NAME === 'goog')
+        client.commands.get('image').execute(message, args);
     //PLAYER
     else if (CMD_NAME === 'sviraj')
         client.commands.get('play').execute(message, args);
     else if (CMD_NAME === 'stani')
         client.commands.get('stop').execute(message, args);
+    //ADMIN
+    else if (CMD_NAME === 'scream')
+        client.commands.get('scream').execute(message, args);
     else message.reply(`komanda ${CMD_NAME} ne postoji, probaj ${PREFIX}pomoc`);
 });
 
