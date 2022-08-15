@@ -35,20 +35,28 @@ client.on('messageCreate', message => {
         .substring(PREFIX.length)
         .split(/\s+/);
 
+    //HELP
     if (CMD_NAME === 'pomoc')
         client.commands.get('help').execute(message, args);
+    //GENERAL
     else if (CMD_NAME === 'hvala')
         client.commands.get('thank').execute(message, args);
     else if (CMD_NAME === 'pozdrav')
         client.commands.get('greeting').execute(message, args);
-    else if (CMD_NAME === 'flag')
-        client.commands.get('flag').execute(message, args);
-    else if (CMD_NAME === 'trazi')
-        client.commands.get('search').execute(message, args);
+    else if (CMD_NAME === 'vrijeme')
+        client.commands.get('time').execute(message, args);
+    //MEME
     else if (CMD_NAME === 'prdac')
         client.commands.get('fart').execute(message, args);
     else if (CMD_NAME === 'sex')
         client.commands.get('sex').execute(message, args);
+    else if (CMD_NAME === 'tomo')
+        message.channel.send({ files: ['./images/tomo.jpeg'] });
+    //INTERACTIVE
+    else if (CMD_NAME === 'flag')
+        client.commands.get('flag').execute(message, args);
+    else if (CMD_NAME === 'trazi')
+        client.commands.get('search').execute(message, args);
     else if (CMD_NAME === 'prognoza')
         client.commands.get('weather').execute(message, args);
     //PLAYER

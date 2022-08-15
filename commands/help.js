@@ -6,14 +6,18 @@ module.exports = {
             '**Haubot v0.5**' +
                 '\n*Developed by oyrad*' +
                 '\n```Dobar dan, ja sam Haubot, imam iste funkcije kao pravi Hauba samo sam manje naporan.```' +
-                '\n**Komande**' +
-                '```\n!flag {drzava} => zastava drzave```' +
-                '```\n!hvala => nema na cemu```' +
+                '\n**Generalne komande**' +
+                '```\n!hvala => nema na čemu kompa```' +
                 '```\n!pomoc => ova pomoć```' +
                 '```\n!pozdrav => prigodno pozdravim```' +
+                '```\n!vrijeme => pokažem trenutno vrijeme```' +
+                '\n**Interaktivne komande**' +
+                '```\n!flag {drzava} => pošaljem zastavu države```' +
                 '```\n!prognoza {grad} => trenutno stanje u gradu```' +
                 '```\n!trazi {pojam} => nalazim odabrani pojam```' +
-                '```\n!vrijeme => pokažem trenutno vrijeme```'
+                '\n**Player komande**' +
+                '```\n!sviraj {pjesma} => odsviram ti pjesmu```' +
+                '```\n!stani => mičem se```'
         );
     },
 };

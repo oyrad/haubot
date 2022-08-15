@@ -1,4 +1,5 @@
 const {
+    AudioPlayerStatus,
     joinVoiceChannel,
     createAudioPlayer,
     createAudioResource,
@@ -35,6 +36,8 @@ module.exports = {
 
                 player.play(resource);
                 connection.subscribe(player);
+
+                player.on(AudioPlayerStatus.Idle, () => connection.destroy());
 
                 message.channel.send('**Sviram**');
                 message.channel.send(url);
