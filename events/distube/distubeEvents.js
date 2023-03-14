@@ -19,9 +19,9 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `🎶 | Playing \`${song.name}\` - \`${
+            `🎶 | Sviram \`${song.name}\` - \`${
               song.formattedDuration
-            }\`\nRequested by: ${song.user}\n${status(queue)}`
+            }\`\nOdabrao: ${song.user}\n${status(queue)}`
           ),
       ],
     })
@@ -32,7 +32,7 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `🎶 | Added ${song.name} - \`${song.formattedDuration}\` to the queue by ${song.user}`
+            `🎶 | ${song.user} dodao ${song.name} - \`${song.formattedDuration}\` u queue`
           ),
       ],
     })
@@ -60,7 +60,7 @@ client.distube
       embeds: [
         new EmbedBuilder()
           .setColor("Red")
-          .setDescription("⛔ |Voice channel is empty! Leaving the channel..."),
+          .setDescription("nema nikog u kanalu, odlazim pozdravljen"),
       ],
     })
   )
