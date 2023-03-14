@@ -36,7 +36,6 @@ module.exports = {
         textChannel: channel,
         member: member,
       });
-      return interaction.reply({ embeds: [embed] });
     } catch (err) {
       console.log(err);
       embed.setColor("Red").setDescription("nisam uspio");

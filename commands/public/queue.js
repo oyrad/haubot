@@ -36,7 +36,9 @@ module.exports = {
         .setDescription(
           `${queue.songs.map(
             (song, index) =>
-              `\n**${index + 1}.** ${song.name} - \`${song.formattedDuration}\``
+              `\n**${index + 1}.** \`${song.name}\` - \`${
+                song.formattedDuration
+              }\``
           )}`
         );
       return interaction.reply({ embeds: [embed] });

@@ -1,17 +1,6 @@
 const client = require("../../bot");
 const { EmbedBuilder } = require("discord.js");
 
-const status = (queue) =>
-  `Volume: \`${queue.volume}%\` | Filter: \`${
-    queue.filters.names.join(", ") || "Off"
-  }\` | Loop: \`${
-    queue.repeatMode
-      ? queue.repeatMode === 2
-        ? "All Queue"
-        : "This Song"
-      : "Off"
-  }\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``;
-
 client.distube
   .on("playSong", (queue, song) =>
     queue.textChannel.send({
@@ -19,9 +8,7 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `🎶 | Sviram \`${song.name}\` - \`${
-              song.formattedDuration
-            }\`\nOdabrao: ${song.user}\n${status(queue)}`
+            `Sviram \`${song.name}\` - \`${song.formattedDuration}\`\nOdabrao: ${song.user}`
           ),
       ],
     })
@@ -32,7 +19,7 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `🎶 | ${song.user} dodao ${song.name} - \`${song.formattedDuration}\` u queue`
+            `${song.user} dodao ${song.name} - \`${song.formattedDuration}\` u queue`
           ),
       ],
     })
@@ -43,7 +30,7 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `🎶 | Added \`${playlist.name}\` playlist (${
+            `Added \`${playlist.name}\` playlist (${
               playlist.songs.length
             } songs) to queue\n${status(queue)}`
           ),
