@@ -2,17 +2,18 @@ const client = require("../../bot");
 const { EmbedBuilder } = require("discord.js");
 
 client.distube
-  .on("playSong", (queue, song) =>
+  .on("playSong", (queue, song) => {
     queue.textChannel.send({
       embeds: [
         new EmbedBuilder()
-          .setColor("Green")
+          .setColor("DarkGreen")
           .setDescription(
-            `Sviram \`${song.name}\` - \`${song.formattedDuration}\`\nOdabrao: ${song.user}`
-          ),
+            `${song.user} odabrao **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
+          )
+          .setThumbnail(song.thumbnail),
       ],
-    })
-  )
+    });
+  })
   .on("addSong", (queue, song) =>
     queue.textChannel.send({
       embeds: [
@@ -56,7 +57,7 @@ client.distube
       embeds: [
         new EmbedBuilder()
           .setColor("Red")
-          .setDescription(`⛔ | No result found for \`${query}\`!`),
+          .setDescription(`nisam ništa našao s nazivom \`${query}\`!`),
       ],
     })
   )
@@ -64,8 +65,8 @@ client.distube
     queue.textChannel.send({
       embeds: [
         new EmbedBuilder()
-          .setColor("Green")
-          .setDescription("🏁 | Queue finished!"),
+          .setColor("White")
+          .setDescription("gotov sam, budite pozdravljeni"),
       ],
     })
   );

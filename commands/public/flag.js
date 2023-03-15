@@ -19,7 +19,7 @@ module.exports = {
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
-          interaction.reply(`${country} ne postoji`);
+          interaction.reply(`\`${country}\` ne postoji`);
         }
         interaction.reply(data[0].flags.png);
       })
