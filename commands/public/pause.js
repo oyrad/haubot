@@ -12,8 +12,7 @@ module.exports = {
     const embed = new EmbedBuilder();
 
     if (!voiceChannel) {
-      embed.setColor("Red").setDescription("kompa nisi u kanalu");
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply("kompa pa nisi u kanalu");
     }
 
     if (!(member.voice.channelId === guild.members.me.voice.channelId)) {
@@ -36,8 +35,7 @@ module.exports = {
       return interaction.reply({ embeds: [embed] });
     } catch (err) {
       console.log(err);
-      embed.setColor("Red").setDescription("nisam uspio");
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply("nisam uspio");
     }
   },
 };

@@ -36,8 +36,7 @@ module.exports = {
       return interaction.reply({ embeds: [embed] });
     } catch (err) {
       console.log(err);
-      embed.setColor("Red").setDescription("nisam uspio");
-      return interaction.reply({ embeds: [embed] });
+      return interaction.reply("nisam uspio");
     }
   },
 };

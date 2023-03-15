@@ -6,9 +6,9 @@ client.distube
     queue.textChannel.send({
       embeds: [
         new EmbedBuilder()
-          .setColor("DarkGreen")
+          .setColor("Green")
           .setDescription(
-            `${song.user} odabrao **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
+            `Trenutno svira **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
           )
           .setThumbnail(song.thumbnail),
       ],
@@ -18,10 +18,11 @@ client.distube
     queue.textChannel.send({
       embeds: [
         new EmbedBuilder()
-          .setColor("Green")
+          .setColor("DarkGreen")
           .setDescription(
             `${song.user} dodao ${song.name} - \`${song.formattedDuration}\` u queue`
-          ),
+          )
+          .setThumbnail(song.thumbnail),
       ],
     })
   )
