@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
+require("dotenv").config();
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -24,9 +25,9 @@ module.exports = {
           return;
         }
         interaction.reply(
-          `**${data.name}** \nTemperatura je *ugodnih* ${Math.round(
+          `**${data.name}** \nTemperatura je ugodnih \`${Math.round(
             data.main.temp - 273.15
-          )}° C, a vani ${data.weather[0].description}.`
+          )} °C\`, a vani \`${data.weather[0].description}\`.`
         );
       })
       .catch((err) => {
