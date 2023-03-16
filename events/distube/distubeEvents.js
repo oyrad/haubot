@@ -8,7 +8,7 @@ client.distube
         new EmbedBuilder()
           .setColor("Green")
           .setDescription(
-            `Trenutno svira **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
+            `Trenutno sviram **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
           )
           .setThumbnail(song.thumbnail),
       ],
@@ -20,7 +20,7 @@ client.distube
         new EmbedBuilder()
           .setColor("DarkGreen")
           .setDescription(
-            `${song.user} dodao ${song.name} - \`${song.formattedDuration}\` u queue`
+            `${song.user} dodao **[${song.name}](${song.url})** - \`${song.formattedDuration}\``
           )
           .setThumbnail(song.thumbnail),
       ],
@@ -65,9 +65,7 @@ client.distube
   .on("finish", (queue) =>
     queue.textChannel.send({
       embeds: [
-        new EmbedBuilder()
-          .setColor("White")
-          .setDescription("gotov sam, budite pozdravljeni"),
+        new EmbedBuilder().setDescription("gotov sam, budite pozdravljeni"),
       ],
     })
   );

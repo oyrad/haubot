@@ -35,7 +35,8 @@ module.exports = {
         textChannel: channel,
         member: member,
       });
-      return interaction.reply("**Sviram**");
+      interaction.deferReply("**Sviram**");
+      return interaction.deleteReply();
     } catch (err) {
       console.log(err);
       return interaction.reply("nisam uspio");

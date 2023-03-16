@@ -39,9 +39,8 @@ module.exports = {
       embed
         .setColor("Orange")
         .setDescription(
-          `preskočio **[${queue.songs[0].name}](${queue.songs[0].url})**`
-        )
-        .setThumbnail(queue.songs[0].thumbnail);
+          `Preskočio **[${queue.songs[0].name}](${queue.songs[0].url})**`
+        );
       return interaction.reply({ embeds: [embed] });
     } catch (err) {
       console.log(err);

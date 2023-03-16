@@ -32,7 +32,7 @@ module.exports = {
       }
 
       await queue.resume(voiceChannel);
-      embed.setColor("Green").setDescription("nastavljam svirku");
+      embed.setColor("Blue").setDescription("nastavljam svirku");
       return interaction.reply({ embeds: [embed] });
     } catch (err) {
       console.log(err);
